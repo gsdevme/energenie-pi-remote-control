@@ -9,6 +9,5 @@
     "bin-dir": "bin"
   },
   "require": {
-    "ronanguilloux/php-gpio": "master-dev"
   }
 }
