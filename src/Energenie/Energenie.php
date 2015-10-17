@@ -38,11 +38,14 @@ class Energenie
         $this->doSetup($gpio);
 
         foreach ($operations as $pin => $value) {
-            if (!in_array($values, [GpioInterface::IO_VALUE_ON, GpioInterface::IO_VALUE_OFF])) {
+            $pin = (int)$pin;
+            $value = (int)$value;
+
+            if (!in_array($value, [GpioInterface::IO_VALUE_ON, GpioInterface::IO_VALUE_OFF])) {
                 throw new \RuntimeException(sprintf('Invalid value'));
             }
 
-            $gpio->output((int)$pin, (int)$value);
+            $gpio->output($pin, $value);
         }
 
         $this->doModulator($gpio);
