@@ -46,6 +46,8 @@ class Energenie
             }
 
             $gpio->output($pin, $value);
+
+            printf('Output > Pin %s, Value %s%s', $pin, $value, PHP_EOL);
         }
 
         $this->doModulator($gpio);
@@ -58,8 +60,6 @@ class Energenie
         foreach ($this->pins as $pin) {
             $gpio->setup($pin, GpioInterface::DIRECTION_OUT);
         }
-
-        usleep(100);
 
         $gpio->setup(24, GpioInterface::DIRECTION_OUT);
         $gpio->setup(25, GpioInterface::DIRECTION_OUT);
