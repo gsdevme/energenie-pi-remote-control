@@ -16,7 +16,7 @@ class SocketRegistry implements \IteratorAggregate, \Countable
         $this->registry[] = $factory->create(1, 1111, 0111);
 
         // socket 2
-        $this->registry[] = $factory->create(1, 1110, 0110);
+        $this->registry[] = $factory->create(2, 1110, 0110);
     }
 
     /**
