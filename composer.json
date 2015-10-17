@@ -1,13 +1,13 @@
 {
   "name": "gsdevme/energenie-pi-remote-control",
-  	"autoload": {
-		"psr-0": {
-			"": "src"
-		}
-	},
-	"config": {
-		"bin-dir": "bin"
-	},
+  "autoload": {
+    "psr-0": {
+      "": "src"
+    }
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
   "require": {
     "ronanguilloux/php-gpio": "master-dev"
   }
