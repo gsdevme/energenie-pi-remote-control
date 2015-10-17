@@ -8,10 +8,10 @@ Install this https://projects.drogon.net/raspberry-pi/wiringpi/download-and-inst
     gpio export 25 out
     gpio export 27 out
 
-    gpio write 22 0
-    gpio write 18 0
+    gpio -1 write 25 0
+    gpio -1 write 24 0
 
-    gpio write 11 0
-    gpio write 15 0
-    gpio write 16 0
-    gpio write 13 0
+    gpio -1 write 17 0
+    gpio -1 write 22 0
+    gpio -1 write 23 0
+    gpio -1 write 27 0
