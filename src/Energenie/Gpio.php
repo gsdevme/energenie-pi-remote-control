@@ -31,6 +31,6 @@ class Gpio
 
         usleep(500);
 
-        exec($command);
+        system($command);
     }
 }
