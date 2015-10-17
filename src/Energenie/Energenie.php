@@ -15,7 +15,7 @@ class Energenie
      */
     public function __construct(SocketRepository $repository)
     {
-        $this->pins       = [11, 15, 16, 13];
+        $this->pins       = [17, 22, 23, 27];
         $this->repository = $repository;
     }
 
@@ -52,11 +52,13 @@ class Energenie
             $gpio->setup($pin, GpioInterface::DIRECTION_OUT);
         }
 
-        $gpio->setup(18, GpioInterface::DIRECTION_OUT);
-        $gpio->setup(22, GpioInterface::DIRECTION_OUT);
+        usleep(100);
 
-        $gpio->output(22, GpioInterface::IO_VALUE_OFF);
-        $gpio->output(18, GpioInterface::IO_VALUE_OFF);
+        $gpio->setup(24, GpioInterface::DIRECTION_OUT);
+        $gpio->setup(25, GpioInterface::DIRECTION_OUT);
+
+        $gpio->output(25, GpioInterface::IO_VALUE_OFF);
+        $gpio->output(24, GpioInterface::IO_VALUE_OFF);
 
         foreach ($this->pins as $pin) {
             $gpio->output($pin, GpioInterface::IO_VALUE_OFF);
@@ -66,8 +68,8 @@ class Energenie
     private function doModulator(Gpio $gpio)
     {
         usleep(100);
-        $gpio->output(22, true);
+        $gpio->output(25, true);
         usleep(250);
-        $gpio->output(22, false);
+        $gpio->output(25, false);
     }
 }
