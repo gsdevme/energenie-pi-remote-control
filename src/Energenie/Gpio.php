@@ -29,6 +29,8 @@ class Gpio
 
         printf('%s%s', $command, PHP_EOL);
 
+        usleep(500);
+
         exec($command);
     }
 }

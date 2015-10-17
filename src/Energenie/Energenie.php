@@ -43,9 +43,7 @@ class Energenie
     }
     private function doModulator()
     {
-        usleep(100);
         $this->gpio->write(25, 1);
-        usleep(250);
         $this->gpio->write(25, 0);
     }
 }
