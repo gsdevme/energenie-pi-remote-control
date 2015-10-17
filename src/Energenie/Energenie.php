@@ -52,7 +52,7 @@ class Energenie
 
         $this->doModulator($gpio);
 
-        $gpio->unexportAll();
+        //$gpio->unexportAll();
     }
 
     private function doSetup(Gpio $gpio)
