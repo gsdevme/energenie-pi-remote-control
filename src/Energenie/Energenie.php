@@ -38,6 +38,10 @@ class Energenie
         $this->doSetup($gpio);
 
         foreach ($operations as $pin => $value) {
+            if (!in_array($values, [GpioInterface::IO_VALUE_ON, GpioInterface::IO_VALUE_OFF])) {
+                throw new \RuntimeException(sprintf('Invalid value'));
+            }
+
             $gpio->output((int)$pin, (int)$value);
         }
 
@@ -68,8 +72,8 @@ class Energenie
     private function doModulator(Gpio $gpio)
     {
         usleep(100);
-        $gpio->output(25, true);
+        $gpio->output(25, GpioInterface::IO_VALUE_ON);
         usleep(250);
-        $gpio->output(25, false);
+        $gpio->output(25, GpioInterface::IO_VALUE_OFF);
     }
 }
