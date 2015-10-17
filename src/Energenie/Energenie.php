@@ -38,7 +38,7 @@ class Energenie
         $this->doSetup($gpio);
 
         foreach ($operations as $pin => $value) {
-            $gpio->output((int)$pin, (bool)$value);
+            $gpio->output((int)$pin, (int)$value);
         }
 
         $this->doModulator($gpio);
