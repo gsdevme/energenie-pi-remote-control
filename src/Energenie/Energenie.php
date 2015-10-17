@@ -53,7 +53,7 @@ class Energenie
         }
 
         $gpio->setup(18, GpioInterface::DIRECTION_OUT);
-        $gpio->setup(18, GpioInterface::DIRECTION_OUT);
+        $gpio->setup(22, GpioInterface::DIRECTION_OUT);
 
         $gpio->output(22, GpioInterface::IO_VALUE_OFF);
         $gpio->output(18, GpioInterface::IO_VALUE_OFF);
