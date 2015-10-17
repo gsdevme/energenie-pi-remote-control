@@ -25,6 +25,10 @@ class Gpio
             throw new \RuntimeException(sprintf('Only pins %s are supported for write', implode(', ', $this->supported)));
         }
 
-        exec(sprintf('gpio -g write %u %u', (int)$pin, (int)$value));
+        $command = sprintf('gpio -g write %u %u', (int)$pin, (int)$value);
+
+        printf('%s%s', $command, PHP_EOL);
+
+        exec($command);
     }
 }
