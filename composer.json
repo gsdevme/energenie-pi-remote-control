@@ -1,0 +1,6 @@
+{
+  "name": "gsdevme/energenie-pi-remote-control"
+  "require": {
+    "ronanguilloux/php-gpio": "master-dev"
+  }
+}
